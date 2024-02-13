@@ -10,7 +10,7 @@ jobs:
       - name: Install OTP and Elixir
         uses: erlef/setup-beam@v1
         with:
-          otp-version: 26.2
+          otp-version: 26.2.1
           elixir-version: 1.16.1
           version-type: strict
       - name: Setup JFrog CLI
