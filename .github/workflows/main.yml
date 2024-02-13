@@ -50,7 +50,7 @@ jobs:
         run: |
           jf rt build-add-git hex-build 2.0.${{github.run_number}}
           jf rt build-collect-env hex-build 2.0.${{github.run_number}}
-          find ./todos/deps/ -type d -exec tar czf $(basename {}).tar {} \;
+          find ./todos/deps/ -maxdepth 2 -mindepth 1 -type d -exec tar czf $(basename {}).tar {} \;
           jf rt u "./todos/deps/*.tar" hex-depend-local/
           jf rt build-add-dependencies hex-build 2.0.${{github.run_number}} "./todos/deps/*.tar" 
           jf rt u "./todos/*.tar"  hex-virt/test-app/todos-0.1.0.tar  --build-name hex-build --build-number 2.0.${{github.run_number}}
