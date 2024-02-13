@@ -9,6 +9,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        
+      - name: Setup working directory
+        working-directory: ./todos
 
       - name: Install OTP and Elixir
         uses: erlef/setup-beam@v1
