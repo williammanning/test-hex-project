@@ -24,6 +24,13 @@ jobs:
         working-directory: ./todos
         run: mix deps.get
 
+      - name: Set unique package version
+        working-directory: ./todos
+        run: |
+          version=0.0.$GITHUB_RUN_NUMBER
+          mix bump $version
+          echo "::set-output name=version::$version"
+
       - name: Check mix format
         working-directory: ./todos
         run: mix format --check-formatted
