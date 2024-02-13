@@ -1,13 +1,21 @@
 name: Hex Artifactory Example
+
 on: [workflow_dispatch, push]
 
 jobs:
-  build:
+  format:
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+
+      - name: Install OTP and Elixir
+        uses: erlef/setup-beam@v1
+        with:
+          otp-version: 26.2.1
+          elixir-version: 1.16.1
+          version-type: strict
   
       - name: Setup JFrog CLI
       - uses: jfrog/setup-jfrog-cli@v4
