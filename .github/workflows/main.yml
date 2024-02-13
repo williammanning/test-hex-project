@@ -18,17 +18,19 @@ jobs:
           version-type: strict
   
       - name: Setup JFrog CLI
-      - uses: jfrog/setup-jfrog-cli@v4
+        uses: jfrog/setup-jfrog-cli@v4
         env:
           JF_URL: ${{ secrets.JF_URL }}
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
 
       # This command adds a new server configuration to the JFrog CLI  
       - name: Setup JFrog CLI - Server
-      - run: |
+        run: |
           export SERVER_ID="test"
           jf c add $SERVER_ID --url=$URL --access-token=$ACCESS_TOKEN --interactive=false
           
       - name: Setup Test JFrog CLI 
-      - run: jf --version
-      - run: jf rt ping
+        run: jf --version
+
+      - name: Setup Test JFrog Ping 
+        run: jf rt ping
