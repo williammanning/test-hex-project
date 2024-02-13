@@ -1,14 +1,14 @@
 name: Hex Artifactory Example
-on: workflow_dispatch
+on: [workflow_dispatch, push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+      - uses: actions/checkout@v1
       - name: Install OTP and Elixir
-        uses: erlef/setup-beam@v1
+      - uses: erlef/setup-beam@v1
         with:
           otp-version: 26.2.1
           elixir-version: 1.16.1
