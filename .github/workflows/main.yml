@@ -7,12 +7,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: Install OTP and Elixir
+        uses: erlef/setup-beam@v1
+        with:
+          otp-version: 26.2
+          elixir-version: 1.16.1
+          version-type: strict
       - name: Setup JFrog CLI
       - uses: jfrog/setup-jfrog-cli@v4
         env:
           JF_URL: ${{ secrets.JF_URL }}
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
       - run: jf --version
+      - run: jf rt ping
       - name: Run JFrog CLI
         run: |
           # Collect environment variables for the build
