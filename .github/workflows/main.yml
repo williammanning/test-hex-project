@@ -56,13 +56,13 @@ jobs:
         run: find ./todos/deps/ -maxdepth 1 -mindepth 1 -type d -exec tar czf $(basename {}).tar {} \;
 
       - name: Upload deps to Artifactory 
-        run: jf rt u ./todos/deps/*.tar hex-depend-local/
+        run: jf rt u "./todos/deps/*.tar" hex-depend-local/
 
       - name: Add deps to build depenencies 
-        run: jf rt build-add-dependencies hex-build 2.0.${{github.run_number}} ./todos/deps/*.tar 
+        run: jf rt build-add-dependencies hex-build 2.0.${{github.run_number}} "./todos/deps/*.tar" 
 
       - name: Uplaod build to Artifactory 
-        run: jf rt u ./todos/*.tar  hex-virt/test-app/todos-0.1.0.tar  --build-name hex-build --build-number 2.0.${{github.run_number}}  --recursive=false
+        run: jf rt u "./todos/*.tar"  --recursive=false hex-virt/test-app/todos-0.1.0.tar  --build-name hex-build --build-number 2.0.${{github.run_number}}
 
       - name: Publish build to Artifactory 
         run: jf rt build-publish hex-build 2.0.${{github.run_number}}
