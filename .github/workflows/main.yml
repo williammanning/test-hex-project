@@ -28,7 +28,7 @@ jobs:
         working-directory: ./todos
         run: |
           version=0.0.$GITHUB_RUN_NUMBER
-          mix bump $version
+          mix bump.version
           echo "::set-output name=version::$version"
 
       - name: Check mix format
