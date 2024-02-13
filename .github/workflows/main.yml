@@ -1,4 +1,4 @@
-name: "Hex Artifactory Example"
+name: Hex Artifactory Example
 on: workflow_dispatch
 
 jobs:
