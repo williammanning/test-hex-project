@@ -4,19 +4,21 @@ on: [workflow_dispatch, push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout
-      - uses: actions/checkout@v1
-      - name: Install OTP and Elixir
-      - uses: erlef/setup-beam@v1
-        with:
-          otp-version: 26.2.1
-          elixir-version: 1.16.1
-          version-type: strict
+        uses: actions/checkout@v1
+  
       - name: Setup JFrog CLI
       - uses: jfrog/setup-jfrog-cli@v4
         env:
           JF_URL: ${{ secrets.JF_URL }}
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+
+      # This command adds a new server configuration to the JFrog CLI   
+      - run: |
+          export SERVER_ID="test"
+          jf c add $SERVER_ID --url=$URL --access-token=$ACCESS_TOKEN --interactive=false
+      
       - run: jf --version
       - run: jf rt ping
