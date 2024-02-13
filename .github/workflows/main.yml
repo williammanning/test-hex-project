@@ -20,11 +20,3 @@ jobs:
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
       - run: jf --version
       - run: jf rt ping
-      - name: Run JFrog CLI
-        run: |
-          # Collect environment variables for the build
-          jfrog rt bce
-          # Collect VCS details from git and add them to the build
-          jfrog rt bag
-          # Publish build info
-          jfrog rt bp
