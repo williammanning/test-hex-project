@@ -62,7 +62,7 @@ jobs:
         run: jf rt build-add-dependencies hex-build 2.0.${{github.run_number}} "./todos/deps/*.tar" 
 
       - name: Uplaod build to Artifactory 
-        run: jf rt u "./todos/todos-0.1.0.tar" hex-virt/test-app/todos-0.1.0.tar  --build-name hex-build --build-number 2.0.${{github.run_number}}  --recursive=false
+        run: jf rt u "./todos-0.1.0.tar" hex-virt/test-app/todos-0.1.0.tar  --build-name hex-build --build-number 2.0.${{github.run_number}}  --recursive=false
 
       - name: Publish build to Artifactory 
         run: jf rt build-publish hex-build 2.0.${{github.run_number}}
