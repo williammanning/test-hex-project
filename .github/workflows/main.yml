@@ -41,6 +41,12 @@ jobs:
       - name: Make Deps directory for downlaod from Artifactory 
         run: mkdir ./todos/deps
 
+      - name: Download Deps from Artifactory and unpack tars 
+        run: jf rt dl hex-depend-local/todos/deps/ --include-dirs
+
+      - name: Check Deps download from ARtifactory  
+        run: ls -la ./todos/deps 
+
       - name: Set Unsafe to True 
         run:  mix hex.config unsafe_https true
         
