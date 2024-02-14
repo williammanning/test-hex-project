@@ -35,7 +35,7 @@ jobs:
       - name: Setup Test JFrog Ping 
         run: jf rt ping
 
-      - name: Check local build directory
+      - name: Check local build directory - pre-build 
         run: ls -la ./todos
 
       - name: Set Unsafe to True 
@@ -44,6 +44,9 @@ jobs:
       - name: Install dependencies
         working-directory: ./todos
         run: mix deps.get
+
+      - name: Check local build directory - post-build 
+        run: ls -la ./todos
 
       - name: Check mix format
         working-directory: ./todos
