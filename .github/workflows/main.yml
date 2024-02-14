@@ -39,7 +39,7 @@ jobs:
         run: ls -la ./todos
 
       - name: Make Deps directory for downlaod from Artifactory 
-        run: mdkir ./todos/deps
+        run: mkdir ./todos/deps
 
       - name: Set Unsafe to True 
         run:  mix hex.config unsafe_https true
