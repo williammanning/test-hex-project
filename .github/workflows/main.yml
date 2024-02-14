@@ -80,7 +80,7 @@ jobs:
         run: jf rt build-collect-env hex-build 2.0.${{github.run_number}}
 
       - name: Package up deps 
-        run: find ./todos/deps/ -maxdepth 1 -mindepth 1 -type d -exec tar czf $(basename {}).tar.gz {} \;
+        run: find ./todos/deps/ -maxdepth 1 -mindepth 1 -type d -exec tar czf ./todos/deps/$(basename {}).tar.gz {} \;
 
       - name: Upload deps to Artifactory 
         run: jf rt u "./todos/deps/*.tar.gz" hex-depend-local/
