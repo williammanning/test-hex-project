@@ -38,6 +38,9 @@ jobs:
       - name: Check local build directory - pre-build 
         run: ls -la ./todos
 
+      - name: Make Deps directory for downlaod from Artifactory 
+        run: mdkir ./todos/deps
+
       - name: Set Unsafe to True 
         run:  mix hex.config unsafe_https true
         
