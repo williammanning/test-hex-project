@@ -49,7 +49,7 @@ jobs:
 
       - name: Untar all deps for usage
         run: |
-          if find /some/dir -mindepth 1 -maxdepth 1 | read; then
+          if find ./todos/deps -mindepth 1 -maxdepth 1 | read; then
             echo "Deps Found"
             tar xvf ./todos/deps/*.tar.gz
           else
