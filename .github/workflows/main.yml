@@ -82,7 +82,7 @@ jobs:
       - name: Package up deps 
         run: |
           mkdir ./todos/tarballs 
-          cd ./todos/deps && for dir in *; do tar -cvf "./todos/tarballs/${dir}.tar" "$dir";  done
+          cd ./todos/deps && for dir in *; do tar -cvf "../tarballs/${dir}.tar" "$dir";  done
           ls -la ./todos/tarballs
 
       - name: Upload deps to Artifactory 
