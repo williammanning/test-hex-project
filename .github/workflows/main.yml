@@ -51,7 +51,7 @@ jobs:
         run: |
           if find ./todos/deps -mindepth 1 -maxdepth 1 | read; then
             echo "Deps Found"
-            tar xvf ./todos/deps/*.tar.gz
+            # tar xvf ./todos/deps/*.tar.gz
           else
             echo "No Deps Found"
           fi
