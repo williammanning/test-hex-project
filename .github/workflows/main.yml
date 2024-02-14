@@ -16,17 +16,6 @@ jobs:
           otp-version: 26.2.1
           elixir-version: 1.16.1
           version-type: strict
-          
-      - name: Set Unsafe to True 
-        run:  mix hex.config unsafe_https true
-        
-      - name: Install dependencies
-        working-directory: ./todos
-        run: mix deps.get
-
-      - name: Check mix format
-        working-directory: ./todos
-        run: mix format --check-formatted
   
       - name: Setup JFrog CLI
         uses: jfrog/setup-jfrog-cli@v4
@@ -45,6 +34,17 @@ jobs:
 
       - name: Setup Test JFrog Ping 
         run: jf rt ping
+
+      - name: Set Unsafe to True 
+        run:  mix hex.config unsafe_https true
+        
+      - name: Install dependencies
+        working-directory: ./todos
+        run: mix deps.get
+
+      - name: Check mix format
+        working-directory: ./todos
+        run: mix format --check-formatted
         
       - name: Start to Process Build to Artifactory 
         run: jf rt build-add-git hex-build 2.0.${{github.run_number}}
