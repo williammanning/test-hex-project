@@ -48,7 +48,13 @@ jobs:
         run: ls -la ./todos/deps 
 
       - name: Untar all deps for usage
-        run: tar xvf ./todos/deps/*.tar.gz
+        run: |
+          if find /some/dir -mindepth 1 -maxdepth 1 | read; then
+            echo "Deps Found"
+            tar xvf ./todos/deps/*.tar.gz
+          else
+            echo "No Deps Found"
+          fi
 
       - name: Check Deps untarred from in directory   
         run: ls -la ./todos/deps 
