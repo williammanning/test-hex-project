@@ -44,7 +44,13 @@ jobs:
       - name: Download Deps from Artifactory and unpack tars 
         run: jf rt dl hex-depend-local/todos/deps/ --include-dirs
 
-      - name: Check Deps download from ARtifactory  
+      - name: Check Deps download from Artifactory  
+        run: ls -la ./todos/deps 
+
+      - name: Untar all deps for usage
+        run: tar xvf ./todos/deps/*.tar
+
+      - name: Check Deps untarred from in directory   
         run: ls -la ./todos/deps 
 
       - name: Set Unsafe to True 
