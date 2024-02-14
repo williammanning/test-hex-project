@@ -42,7 +42,7 @@ jobs:
         run: mkdir ./todos/deps
 
       - name: Download Deps from Artifactory and unpack tars 
-        run: jf rt dl hex-depend-local/todos/tarballs/ ./todos/deps --explode=true
+        run: jf rt dl hex-depend-local/todos/tarballs/ ./todos/deps --explode=true --include-dirs
 
       - name: Check Deps download from Artifactory  
         run: ls -la ./todos/deps 
