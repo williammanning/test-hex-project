@@ -93,9 +93,11 @@ jobs:
 
       - name: Uplaod build to Artifactory 
         run: |
-          ls -la ./todos
+          ls -la 
           jf rt u "./todos/*.tar" hex-virt/test-app/todos-0.1.{{github.run_number}}.tar  --build-name hex-build --build-number 2.0.${{github.run_number}} 
+          ls -la tarballs/
 
+          
       - name: Publish build to Artifactory 
         run: jf rt build-publish hex-build 2.0.${{github.run_number}}
         
