@@ -35,6 +35,9 @@ jobs:
       - name: Setup Test JFrog Ping 
         run: jf rt ping
 
+      - name: Check local build directory
+        run: ls -la ./todos
+
       - name: Set Unsafe to True 
         run:  mix hex.config unsafe_https true
         
