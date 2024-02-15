@@ -85,6 +85,7 @@ jobs:
 
       - name: Package up deps 
         run: |
+          rm -rf ./todos/tarballs/
           cd ./todos/deps && for dir in *; do tar czf "../tarballs/${dir}.tar.gz" "$dir";  done
           ls -la ../tarballs
 
