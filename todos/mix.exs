@@ -34,7 +34,8 @@ defmodule Todos.MixProject do
       {:certifi, "~> 2.12"},
       {:hackney, "~> 1.20"},
       {:phoenix, "~> 1.7"},
-      {:jsx, "~> 3.1"}
+      {:jsx, "~> 3.1"},
+      {:redix, "~> 1.3"}
     ]
   end
 
