@@ -29,7 +29,8 @@ defmodule Todos.MixProject do
       {:plug, ">= 0.4.0"},
       {:telemetry, "~> 1.2"},
       {:mimerl, "~> 1.2"},
-      {:jason, "~> 1.4"}
+      {:jason, "~> 1.4"},
+      {:parse_trans, "~> 3.4"}
     ]
   end
 
