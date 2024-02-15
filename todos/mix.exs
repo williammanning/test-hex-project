@@ -29,6 +29,7 @@ defmodule Todos.MixProject do
       {:plug, ">= 0.4.0"},
       {:telemetry, "~> 1.2"},
       {:mimerl, "~> 1.2"}
+    ]
   end
 
   defp package() do
