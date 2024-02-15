@@ -86,7 +86,7 @@ jobs:
       - name: Package up deps 
         run: |
           cd ./todos/tarballs && rm -rf * && ls -la
-          cd ./todos/deps && for dir in *; do tar czf "../tarballs/${dir}.tar.gz" "$dir";  done
+          cd ../deps && for dir in *; do tar czf "../tarballs/${dir}.tar.gz" "$dir";  done
           ls -la ../tarballs
 
       - name: Upload deps to Artifactory 
