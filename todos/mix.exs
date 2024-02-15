@@ -39,7 +39,7 @@ defmodule Todos.MixProject do
      maintainers: ["William Manning"],
      licenses: ["GPL 3.0"],
      description: "Test Hex Project",
-     links: %{"GitHub" => "https://github.com/williammanning/test-hex-project"},
+     links: {"GitHub" => "https://github.com/williammanning/test-hex-project"},
      organization: "me"
     ]
   end
