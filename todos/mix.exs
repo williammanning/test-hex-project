@@ -7,7 +7,10 @@ defmodule Todos.MixProject do
       version: "0.1.0",
       elixir: "~> 1.16",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      package: package(),
+      deps: deps(),
+      name: "todos",
+      source_url: "https://github.com/williammanning/test-hex-project"
     ]
   end
 
@@ -27,6 +30,18 @@ defmodule Todos.MixProject do
       {:telemetry, "~> 1.2"},
       {:mimerl, "~> 1.2"},
       {:jason, "~> 1.4"}
+    ]
+  end
+
+  defp package() do
+    [
+     name: "todos",
+     files: ["lib", "mix.exs", "README*", "LICENSE*"],
+     maintainers: ["William Manning"],
+     licenses: ["GPL 3.0"],
+     description: "Test Hex Project",
+     links: %{"GitHub" => "https://github.com/williammanning/test-hex-project"},
+     organization: "me"
     ]
   end
 end
