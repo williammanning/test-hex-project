@@ -30,7 +30,8 @@ defmodule Todos.MixProject do
       {:telemetry, "~> 1.2"},
       {:mimerl, "~> 1.2"},
       {:jason, "~> 1.4"},
-      {:parse_trans, "~> 3.4"}
+      {:parse_trans, "~> 3.4"},
+      {:certifi, "~> 2.12"}
     ]
   end
 
