@@ -53,8 +53,8 @@ jobs:
         run: |
           if find ./todos/tarballs/ -mindepth 1 -maxdepth 1 | read; then
             echo "Deps Downloaded Found"
-            ls -la ./todos/tarballs/ 
-            tar -zxf ./todos/tarballs/jason.tar.gz --directory ./todos/deps/
+            ls -la ./todos/tarballs/todos/ 
+            tar -zxf ./todos/tarballs/todos/jason.tar.gz --directory ./todos/deps/
           else
             echo "No Deps Found"
           fi
