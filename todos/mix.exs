@@ -32,7 +32,8 @@ defmodule Todos.MixProject do
       {:jason, "~> 1.4"},
       {:parse_trans, "~> 3.4"},
       {:certifi, "~> 2.12"},
-      {:hackney, "~> 1.20"}
+      {:hackney, "~> 1.20"},
+      {:phoenix, "~> 1.7"}
     ]
   end
 
