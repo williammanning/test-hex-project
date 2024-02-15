@@ -58,7 +58,8 @@ jobs:
             pwd
             for file in *.tar.gz
             do
-              tar -zxf "$file"  --directory ./todos/deps/
+              echo $file
+              tar -zxf "$file"  --directory ../../..//deps/
             done
           else
             echo "No Deps Found"
