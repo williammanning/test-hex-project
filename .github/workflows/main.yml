@@ -39,13 +39,15 @@ jobs:
         run: ls -la ./todos
 
       - name: Make Deps directory for downlaod from Artifactory 
-        run: mkdir ./todos/deps
+        run: |
+          mkdir ./todos/deps
+          mkdir ./todos/tarballs
 
       - name: Download Deps from Artifactory and unpack tars 
-        run: jf rt dl hex-depend-local/todos/tarballs/ ./todos/deps/ --include-dirs
+        run: jf rt dl hex-depend-local/todos/tarballs/ ./todos/tarballs/ --include-dirs
 
       - name: Check Deps download from Artifactory  
-        run: ls -la ./todos/tarballs 
+        run: ls -la ./todos/tarballs/ 
 
       - name: Untar all deps for usage
         run: |
