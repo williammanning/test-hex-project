@@ -64,12 +64,10 @@ jobs:
         
       - name: Install dependencies
         working-directory: ./todos
-        run: |
-          mix deps.get
-          ls -la /deps/plug
+        run: mix deps.get
 
       - name: Check local build directory - post-build 
-        run: ls -la ./todos
+        run: ls -la ./todos/deps/
 
       - name: Build App
         run: |
