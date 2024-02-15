@@ -72,6 +72,9 @@ jobs:
       - name: Check mix format
         working-directory: ./todos
         run: mix format --check-formatted
+
+      - name: Build App
+        run: mix hex.build
         
       - name: Start to Process Build to Artifactory 
         run: jf rt build-add-git hex-build 2.0.${{github.run_number}}
