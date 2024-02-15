@@ -47,20 +47,20 @@ jobs:
         run: jf rt dl hex-depend-local/todos/tarballs/ ./todos/tarballs/ --include-dirs
 
       - name: Check Deps download from Artifactory  
-        run: ls -la ./todos/tarballs/ 
+        run: ls -R ./todos/tarballs/ 
 
       - name: Untar all deps for usage
         run: |
           if find ./todos/tarballs/ -mindepth 1 -maxdepth 1 | read; then
             echo "Deps Downloaded Found"
-            ls -la ./todos/tarballs/todos/tarballs
+            ls -R ./todos/tarballs/todos/tarballs
             tar -zxf ./todos/tarballs/todos/tarballs/jason.tar.gz --directory ./todos/deps/
           else
             echo "No Deps Found"
           fi
 
       - name: Check Deps untarred from in directory   
-        run: ls -la ./todos/deps 
+        run: ls -R ./todos/deps 
 
       - name: Set Unsafe to True 
         run:  mix hex.config unsafe_https true
