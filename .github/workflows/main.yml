@@ -67,7 +67,7 @@ jobs:
         run: mix deps.get
 
       - name: Check local build directory - post-build 
-        run: ls -la ./todos/deps/mime
+        run: ls -la ./todos/deps/
 
       - name: Build App
         run: |
