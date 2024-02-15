@@ -54,7 +54,8 @@ jobs:
           if find ./todos/tarballs/ -mindepth 1 -maxdepth 1 | read; then
             echo "Deps Downloaded Found"
             ls -R ./todos/tarballs/todos/tarballs
-            cd ./todos/tarballs/todos/tarballs
+            cd ./todos/tarballs/todos/tarballs/
+            pwd
             for file in *.tar.gz
             do
               tar -zxf "$file"  --directory ./todos/deps/
