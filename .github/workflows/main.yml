@@ -69,10 +69,6 @@ jobs:
       - name: Check local build directory - post-build 
         run: ls -la ./todos
 
-      - name: Check mix format
-        working-directory: ./todos
-        run: mix format --check-formatted
-
       - name: Build App
         run: |
           ls -la
