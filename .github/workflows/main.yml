@@ -54,7 +54,11 @@ jobs:
           if find ./todos/tarballs/ -mindepth 1 -maxdepth 1 | read; then
             echo "Deps Downloaded Found"
             ls -R ./todos/tarballs/todos/tarballs
-            tar -zxf ./todos/tarballs/todos/tarballs/jason.tar.gz --directory ./todos/deps/
+            cd ./todos/tarballs/todos/tarballs
+            for file in *.tar.gz
+            do
+              tar -zxf "$file"  --directory ./todos/deps/
+            done
           else
             echo "No Deps Found"
           fi
